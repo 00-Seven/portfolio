@@ -6,7 +6,7 @@ use App\Models\Visitor;
 use Closure;
 use Illuminate\Http\Request;
 
-class TrackUser
+class CountVisitor
 {
     /**
      * Handle an incoming request.
@@ -17,13 +17,13 @@ class TrackUser
      */
     public function handle(Request $request, Closure $next)
     {
-        $visitor = Visitor::where('ip',$_SERVER['REMOTE_ADDR'])->first();
+        $visitor = Visitor::where('ip_address',$_SERVER['REMOTE_ADDR'])->first();
         if($visitor) {
             $visitor->hits +=1;
             $visitor->save();
         }else{
             Visitor::create([
-                'ip' => $_SERVER['REMOTE_ADDR'],
+                'ip_address' => $_SERVER['REMOTE_ADDR'],
                 'hits' => 1
             ]);
         }

@@ -15,16 +15,6 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    // $visitor = Visitor::where('ip',$_SERVER['REMOTE_ADDR'])->first();
-    // if($visitor) {
-    //     $visitor->hits +=1;
-    //     $visitor->save();
-    // }else{
-    //     Visitor::create([
-    //         'ip' => $_SERVER['REMOTE_ADDR'],
-    //         'hits' => 1
-    //     ]);
-    // }
     return view('welcome');
 });
 Route::get('/home', function () {
@@ -33,3 +23,4 @@ Route::get('/home', function () {
 Route::get('/login', function () {
     return 'login';
 });
+Route::get('visitors',[\App\Http\Controllers\VisitorController::class,'report']);
