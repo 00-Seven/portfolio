@@ -3,14 +3,16 @@ pipeline {
     stages {
         stage("Build") {
             environment {
-                DB_HOST = credentials("laravel-host")
-                DB_DATABASE = credentials("laravel-database")
-                DB_USERNAME = credentials("laravel-user")
-                DB_PASSWORD = credentials("laravel-password")
+                DB_HOST = 'db-mysql-arkarbo-portfolio-do-user-11803527-0.b.db.ondigitalocean.com'
+                DB_PORT = 25060
+                DB_DATABASE = 'portfolio'
+                DB_USERNAME = arkarbo
+                DB_PASSWORD = 'AVNS_F9Xa4j2lm8OslGvq_jJ'
             }
             steps {
                 sh 'cp .env.example .env'
                 sh 'echo DB_HOST=${DB_HOST} >> .env'
+                sh 'echo DB_PORT=${DB_PORT} >> .env'
                 sh 'echo DB_USERNAME=${DB_USERNAME} >> .env'
                 sh 'echo DB_DATABASE=${DB_DATABASE} >> .env'
                 sh 'echo DB_PASSWORD=${DB_PASSWORD} >> .env'
