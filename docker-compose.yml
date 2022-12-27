@@ -2,7 +2,7 @@ version: '2'
 
 services:
   app:
-    container_name: xzonebet-api-app
+    container_name: portfolio
     image: docker.io/bitnami/laravel:9
     command:  bash -c "composer install && php artisan key:generate && php artisan optimize && php artisan serve --host 0.0.0.0 --port 8000"
     ports:
