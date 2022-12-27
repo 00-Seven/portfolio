@@ -1,12 +1,12 @@
 say_hello:
- echo "Hello World"
+	echo "Hello World"
 update:
- git pull
+	git pull
 down:
- docker-compose down
+	docker-compose down
 up:
- docker-compose up --build -d
+	docker-compose up --build -d
 restart:
- make update && make down && make up
+	make update && make down && make up
 
 
