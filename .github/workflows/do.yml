@@ -12,7 +12,7 @@ jobs:
         with:
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USERNAME }}
-          key: ${{ secrets.SSH_ED_KEY }}
+          key: ${{ secrets.SSHKEY }}
           script: |
             whoami
             whoami
