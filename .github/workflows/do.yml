@@ -13,8 +13,7 @@ jobs:
           host: ${{ secrets.HOST }}
           port: 22
           username: ${{ secrets.USERNAME }}
-          passphrase: ${{ secrets.PASSPHRASE }}
-          key: ${{ secrets.SSHKEYPUB }}
+          key: ${{ secrets.SSHKEY }}
           script: |
             whoami
             ls -al
