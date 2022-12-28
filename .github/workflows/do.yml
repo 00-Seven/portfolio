@@ -16,3 +16,4 @@ jobs:
           key: ${{ secrets.SSHKEY }}
           script: |
             whoami
+            whoami
