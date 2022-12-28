@@ -13,7 +13,7 @@ jobs:
           host: ${{ secrets.HOST }}
           port: 22
           username: ${{ secrets.USERNAME }}
-          key: ${{ secrets.SSHKEY }}
+          key: ${{ secrets.SSH_ED_KEY }}
           script: |
             whoami
             whoami
