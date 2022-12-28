@@ -8,10 +8,9 @@ jobs:
     if: github.event_name == 'push'
     steps:
       - name: Deploy to Digital Ocean droplet vir SSH action
-        uses: appleboy/ssh-action@v0.1.6
+        uses: appleboy/ssh-action@master
         with:
           host: ${{ secrets.HOST }}
-          port: 22
           username: ${{ secrets.USERNAME }}
           key: ${{ secrets.SSH_ED_KEY }}
           script: |
