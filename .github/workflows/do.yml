@@ -16,7 +16,7 @@ jobs:
           key: ${{ secrets.SSHKEY }}
           port: 8000
           passphrase: ${{ secrets.PASSPHRASE }}
-          envs: [{{ secrets.DIGITALOCEAN_ACCESS_TOKEN }},GITHUB_SHA]
+          envs: {{ secrets.DIGITALOCEAN_ACCESS_TOKEN }},GITHUB_SHA
           script: |
             #stop all containers
             docker kill $(docker ps -q)
