@@ -2,8 +2,10 @@
 
 namespace App\Console;
 
+use Carbon\Carbon;
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
+use Illuminate\Support\Facades\DB;
 
 class Kernel extends ConsoleKernel
 {
@@ -16,7 +18,15 @@ class Kernel extends ConsoleKernel
     protected function schedule(Schedule $schedule)
     {
         // $schedule->command('inspire')->hourly();
-        $schedule->command('users:logged')->dailyAt("23:37");
+        $schedule->call(function () {
+            $database = "laravel";
+            $current_timestamp = Carbon::now()->toDateTimeString();
+            $sql = "insert into {$database}.logs (name, logged_time) select name,'{$current_timestamp}' as logged_time from {$database}.users";
+            // echo $sql;
+            DB::statement($sql);
+
+         })->dailyAt("23:41");
+        // $schedule->command('users:logged')->dailyAt("23:37");
     }
 
     /**
