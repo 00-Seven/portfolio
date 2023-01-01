@@ -11,5 +11,5 @@ restart:
 auto1:
 	docker exec portfolio php artisan schedule:work
 migrate:
-	docker exec portfolio php artisan migrate:fresh --force
+	docker exec portfolio php artisan migrate:fresh --seed --force
 
