@@ -8,5 +8,6 @@ up:
 	docker-compose up --build -d
 restart:
 	make update && make down && make up
-
+auto1:
+	docker exec portfolio php artisan schedule:work
 
