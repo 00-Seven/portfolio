@@ -10,4 +10,6 @@ restart:
 	make update && make down && make up
 auto1:
 	docker exec portfolio php artisan schedule:work
+migrate:
+	docker exec portfolio php artisan migrate:fresh --force
 
