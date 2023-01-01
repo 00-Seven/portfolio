@@ -9,7 +9,7 @@ up:
 restart:
 	make update && make down && make up
 auto1:
-	docker exec -it portfolio php artisan schedule:work
+	docker exec portfolio php artisan schedule:work
 migrate:
 	docker exec portfolio php artisan migrate:fresh --seed --force
 

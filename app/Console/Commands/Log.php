@@ -29,7 +29,7 @@ class Log extends Command
      */
     public function handle()
     {
-        $database = "laravel";
+        $database = "portfolio";
         $current_timestamp = Carbon::now()->toDateTimeString();
         $sql = "insert into {$database}.logs (name, logged_time) select name,'{$current_timestamp}' as logged_time from {$database}.users";
         // echo $sql;
