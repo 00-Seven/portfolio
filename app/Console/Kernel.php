@@ -26,7 +26,7 @@ class Kernel extends ConsoleKernel
         //     DB::statement($sql);
 
         //  })->dailyAt("23:41");
-        $schedule->command('users:logged')->dailyAt("23:47");
+        $schedule->command('users:logged')->dailyAt("23:53");
     }
 
     /**
