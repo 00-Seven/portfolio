@@ -21,4 +21,9 @@ jobs:
         cp .env.example .env
         make up
 
+    - name: test
+      run: |
+        cd
+        ls
+
 
