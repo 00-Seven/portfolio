@@ -13,8 +13,8 @@ jobs:
     steps:
     - uses: actions/checkout@v3
 
-    - name: Docker Check
-      run: docker ps -a
+    - name: Folder Check
+      run: ls -a
 
     - name: docker-compose
       run: make up
