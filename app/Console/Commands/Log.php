@@ -29,9 +29,9 @@ class Log extends Command
      */
     public function handle()
     {
-        $database = "portfolio";
+        $database = "laravel-dev";
         $current_timestamp = Carbon::now()->toDateTimeString();
-        $sql = "insert into {$database}.logs (name, logged_time) select name,'{$current_timestamp}' as logged_time from {$database}.users";
+        $sql = "insert into logs (name, logged_time) select name,'{$current_timestamp}' as logged_time from users";
         // echo $sql;
         DB::statement($sql);
     }

@@ -1,4 +1,4 @@
-name: Makefile CI
+name: Portfolio CI/CD
 
 on:
   push:
@@ -8,14 +8,11 @@ on:
 
 jobs:
   build:
-
     runs-on: ubuntu-22.04
 
     steps:
     - uses: actions/checkout@v3
 
-    - name: Install dependencies
-      run: make
-      
-    - name: Run distcheck
-      run: cd portfolio
+    - name: Docker Check
+      run: docker ps -a
+
