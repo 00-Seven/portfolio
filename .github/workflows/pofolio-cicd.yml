@@ -20,5 +20,5 @@ jobs:
       run: |
         cd ~/portfolio
         pwd
-        docker-compose up --build
+        docker-compose.yml up --build
 
