@@ -19,5 +19,5 @@ jobs:
     - name: docker-compose
       run: |
         cd ~/portfolio
-        dir
+        ls
 
