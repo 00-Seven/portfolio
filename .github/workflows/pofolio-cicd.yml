@@ -17,6 +17,8 @@ jobs:
       run: ls -a
 
     - name: docker-compose
-      run: make up
+      run: |
+        cp .env.example .env
+        make up
 
 
