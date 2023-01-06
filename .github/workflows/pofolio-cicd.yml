@@ -16,3 +16,6 @@ jobs:
     - name: Docker Check
       run: docker ps -a
 
+    - name: check dir
+      runs: pwd
+
