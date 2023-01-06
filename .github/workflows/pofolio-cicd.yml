@@ -17,5 +17,5 @@ jobs:
       run: docker ps -a
 
     - name: check dir
-      runs: pwd
+      run: pwd
 
