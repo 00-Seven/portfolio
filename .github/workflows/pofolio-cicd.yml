@@ -19,5 +19,5 @@ jobs:
     - name: docker-compose
       run: |
         cd ~/portfolio
-        docker-compose up --build
+        dir
 
